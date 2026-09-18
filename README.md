@@ -91,17 +91,23 @@ At each turn, the current piles are displayed and the player selects a pile and 
 ```text
 .
 ├── README.md
-├── .gitignore
+├── pyproject.toml
 ├── src/
-│   └── nim_ai.py          # Main Q-learning implementation
-└── TIPE/                  # Original academic work and research archive
-    ├── main/              # Historical final implementation
-    ├── Source/            # Experiments, references and earlier implementations
-    ├── tipepresentation/  # Figures and presentation material
-    └── JEU DE NIM.pptx
+│   └── nim_rl/
+│       ├── game.py        # Nim environment and legal actions
+│       ├── agent.py       # Tabular Q-learning agent
+│       ├── opponents.py   # Random and deterministic Nim-sum policies
+│       ├── training.py    # Training loop with real epsilon-greedy exploration
+│       └── evaluation.py  # Deterministic evaluation separated from training
+├── tests/
+│   ├── test_game.py
+│   └── test_agent.py
+└── TIPE/                  # Original academic work preserved as an archive
 ```
 
-The repository keeps the original TIPE material as an archive for traceability, while the main implementation is now exposed clearly under `src/nim_ai.py`. Generated Python, LaTeX and training-output files are excluded through `.gitignore`.
+The original TIPE implementation remains available for traceability, while the maintained code is organized as a small Python package under `src/nim_rl`. The refactor separates the game, learning agent, opponents, training and evaluation concerns and adds basic automated tests.
+
+The modernized training loop explicitly enables epsilon-greedy exploration. Evaluation disables exploration and is kept separate from training. The Nim-sum opponent is deterministic, unlike the historical experimental opponent which deliberately included random moves.
 
 ## Technologies
 
