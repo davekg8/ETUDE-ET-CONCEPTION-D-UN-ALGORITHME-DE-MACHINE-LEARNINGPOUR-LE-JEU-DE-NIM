@@ -91,23 +91,17 @@ At each turn, the current piles are displayed and the player selects a pile and 
 ```text
 .
 ├── README.md
-└── TIPE/
-    ├── main/
-    │   └── final version.py
-    ├── Source/
-    │   ├── nim game q learning.py
-    │   ├── jeu du nim humain vs machine.py
-    │   ├── jeu du nim machine vs machine.py
-    │   ├── smart player.py
-    │   └── ...
-    ├── tipepresentation/
-    │   ├── training results
-    │   ├── figures
-    │   └── presentation material
+├── .gitignore
+├── src/
+│   └── nim_ai.py          # Main Q-learning implementation
+└── TIPE/                  # Original academic work and research archive
+    ├── main/              # Historical final implementation
+    ├── Source/            # Experiments, references and earlier implementations
+    ├── tipepresentation/  # Figures and presentation material
     └── JEU DE NIM.pptx
 ```
 
-The repository also contains research material and intermediate implementations produced during the development of the project.
+The repository keeps the original TIPE material as an archive for traceability, while the main implementation is now exposed clearly under `src/nim_ai.py`. Generated Python, LaTeX and training-output files are excluded through `.gitignore`.
 
 ## Technologies
 
